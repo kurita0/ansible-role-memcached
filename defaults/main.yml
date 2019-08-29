@@ -1,0 +1,1 @@
+memcached_flags: '-l 127.0.0.1:11211'

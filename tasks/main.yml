@@ -11,8 +11,10 @@
   service: name=memcached state=started
 
 - name: memcached_flags
-  lineinfile: "dest=/etc/rc.conf state=present regexp='{{ item.regexp }}' line='{{ item.line }}'"
-  with_items:
-    - regexp: '^memcached_flags='
-      line:   'memcached_flags="{{ memcached_flags }}"'
+  lineinfile:
+    dest: /etc/rc.conf
+    state: present
+    regexp: '^memcached_flags='
+    line: 'memcached_flags="{{ memcached_flags }}"'
   notify: restart memcached
+  when: memcached_flags is defined

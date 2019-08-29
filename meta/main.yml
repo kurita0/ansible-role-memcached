@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: memcached
   author: hideaki kurita
-  description: freebsd_bootstrap
+  description: memcached
 
   license: license (BSD, MIT)
 
